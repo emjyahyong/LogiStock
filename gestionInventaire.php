@@ -51,7 +51,7 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
                 ?>
                 <tr>
                     <td colspan="4" class="text-center">
-                        <a href="./formAjoutArticle.html" class="btn btn-success">Ajouter un nouvel article</a>
+                        <a href="./formAjoutArticle.php" class="btn btn-success">Ajouter un nouvel article</a>
                     </td>
                 </tr>
             </tbody>

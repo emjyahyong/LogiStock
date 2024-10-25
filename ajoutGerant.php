@@ -20,7 +20,8 @@ $requete->bindParam(':mdp', $mdp);
 
 // Exécuter la requête
 if ($requete->execute()) {
-    echo "Nouveau gérant ajouté avec succès.";
+    // echo "Nouveau gérant ajouté avec succès.";
+    header("Location: ./index.php");
 } else {
     echo "Erreur : " . $requete->errorInfo()[2];
 }
