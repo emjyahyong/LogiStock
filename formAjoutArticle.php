@@ -25,6 +25,7 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -33,11 +34,10 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
         </header>
         
         <div class="container">
+            
             <div class="row">
-            <h1>Logistock - Solution pour la gestion d'inventaire</1>
-            </div>
-            <div class="row">
-                    <h2 class="text-center">Création de votre inventaire</h2>
+            <h1 class="text-center" style="margin-top: 2%;">Logistock - Solution pour la gestion d'inventaire</h1>
+                    <h2 class="text-center">Ajout d'un article</h2>
                     <form action="ajoutArticle.php" method="POST">
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom de l'article</label>

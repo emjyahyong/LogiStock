@@ -1,0 +1,169 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h2 {
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #007bff;
+}
+.navbar .navbar-brand, .navbar-nav .nav-link, .navbar .btn {
+    color: white;
+}
+.navbar .navbar-brand:hover, .navbar-nav .nav-link:hover {
+    color: #e2e6ea;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+/* Table Styles */
+.table {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+.table th, .table td {
+    padding: 12px;
+    vertical-align: middle;
+    text-align: center;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+.badge.bg-success {
+    background-color: #28a745;
+}
+.badge.bg-danger {
+    background-color: #dc3545;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 5px;
+}
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+.btn-warning {
+    color: #212529;
+    background-color: #ffc107;
+    border: none;
+}
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+.btn-add-article {
+    background-color: #28a745; /* Vert vif */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+
+.btn-add-article:hover {
+    background-color: #218838; /* Couleur verte plus foncée au survol */
+    transform: translateY(-2px); /* Légère élévation */
+    text-decoration: none;
+}
+
+.btn-add-article:active {
+    background-color: #1e7e34; /* Vert plus intense */
+    transform: translateY(0); /* Retire l'effet d'élévation */
+}
+/* Style pour le bouton de déconnexion */
+.btn-deconnexion {
+    background-color: #dc3545; /* Rouge vif */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-deconnexion:hover {
+    background-color: #c82333; /* Rouge plus foncé au survol */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+.btn-deconnexion:active {
+    background-color: #bd2130; /* Rouge plus intense pour l'effet actif */
+    transform: translateY(0); /* Retire l'effet d'élévation */
+}
+/* Style pour le titre h1 */
+h1 {
+    font-size: 2.5em; /* Plus grand que h2 pour distinction */
+    font-weight: 700; /* Gras pour une meilleure visibilité */
+    color: #333; /* Couleur sombre, compatible avec le style global */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #007bff; /* Ligne de séparation pour un effet visuel */
+}
+
+h1:hover {
+    color: #0056b3; /* Bleu plus foncé au survol */
+    transition: color 0.3s ease;
+}
+
+
+/* Add Article Button Row */
+.table tfoot td {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+    .navbar .navbar-brand, .navbar-nav .nav-link {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}

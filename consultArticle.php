@@ -24,6 +24,7 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -33,10 +34,8 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
         
         <div class="container">
             <div class="row">
-            <h1>Logistock - Solution pour la gestion d'inventaire</1>
-            </div>
-            <div class="row">
-                    <h2 class="text-center">Modfication caractéristiques article</h2>
+            <h1 class="text-center" style="margin-top: 2%;">Logistock - Solution pour la gestion d'inventaire</h1>
+                    <h2 class="text-center">Modification caractéristiques article</h2>
                     <?php
                         require_once "./connexionBDD.php";
                         $sql = "SELECT * FROM inventaireslogistock WHERE idGerant = $idGerant;";

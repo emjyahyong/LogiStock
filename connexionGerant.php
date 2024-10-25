@@ -22,9 +22,9 @@ if ($requete->rowCount() > 0) {
         header("Location: ./gestionInventaire.php"); // Rediriger vers la page d'inventaire
         exit();
     } else {
-        echo "Mot de passe incorrect.";
+        header("Location: index.php?error=Mot de passe ou e-mail incorrect."); 
     }
 } else {
-    echo "Aucun gérant trouvé avec cet email.";
+    header("Location: ./index.php");
 }
 ?>
