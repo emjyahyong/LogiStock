@@ -1,5 +1,4 @@
 <?php
-require_once("connexionBDD.php");
 session_start(); // Démarrer la session
 if (!isset($_SESSION['id'])) {
     header("Location: index.php"); // Rediriger vers la page de connexion si non connecté
@@ -37,22 +36,35 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
             <h1>Logistock - Solution pour la gestion d'inventaire</1>
             </div>
             <div class="row">
-                    <h2 class="text-center">Création de votre inventaire</h2>
-                    <form action="ajoutArticle.php" method="POST">
+                    <h2 class="text-center">Modfication caractéristiques article</h2>
+                    <?php
+                        require_once "./connexionBDD.php";
+                        $sql = "SELECT * FROM inventaireslogistock WHERE idGerant = $idGerant;";
+                        $resultat = $cnx->query($sql);
+                        $ligne = $resultat->fetch();
+
+                        $idArticle = $ligne["id"];
+                        $nomArticle = $ligne["nomArticles"];
+                        $stock = $ligne["stock"];
+                        $prix = $ligne["prix"];
+                    ?>
+
+                    <form action="modificationArticle.php" method="POST">
+                        <input type="hidden" class="form-control" name="idArticle" value="<?php echo $idArticle; ?>" /><br>
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom de l'article</label>
-                            <input type="text" class="form-control" id="nomArticle" name="nomArticle" required>
+                            <input type="text" class="form-control" name="nomArticle" value="<?php echo $nomArticle; ?>" >
                         </div>
                         <div class="mb-3">
                             <label for="prenom" class="form-label">Stock</label>
-                            <input type="text" class="form-control" id="stock" name="stock" required>
+                            <input type="text" class="form-control" name="stock" value="<?php echo $stock; ?>" >
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Prix</label>
-                            <input type="text" class="form-control" id="prix" name="prix" required>
+                            <input type="text" class="form-control" name="prix" value="<?php echo $prix; ?>" >
                         </div>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Ajouter</button>
+                        <button type="submit" class="btn btn-primary w-100">Modifier</button>
                     </form>
             </div>
     </div>
