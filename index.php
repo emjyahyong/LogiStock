@@ -56,6 +56,20 @@ require_once("connexionBDD.php");
                         <button type="submit" class="btn btn-primary w-100">Créer</button>
                     </form>
             </div>
+            <div class="row">
+                    <h2 class="text-center">Connectez-vous</h2>
+                    <form onsubmit="verifyPassword(event)" action="connexionGerant.php" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Adresse e-mail</label>
+                            <input type="email" class="form-control" id="nom" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="nom" name="password" required minlength="6">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Créer</button>
+                    </form>
+            </div>
     </div>
 
     <script>
