@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 25 oct. 2024 à 08:36
+-- Généré le : ven. 25 oct. 2024 à 11:04
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `gerants` (
   `email` varchar(30) NOT NULL,
   `mdp` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `gerants`
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `gerants` (
 
 INSERT INTO `gerants` (`id`, `nom`, `prenom`, `email`, `mdp`) VALUES
 (1, 'ahyong', 'mj', 'mj@gmail.com', '$2y$10$UlkhUjGUTCBn2IrkK/Ptqu.X0YZnj6O4KpHK6LPfa7DXUIsP.8u6O'),
-(2, 'aové', 'saingorge', 'sg@gmail.com', '$2y$10$LpxVFcuDoV/G02FXFnozYeE9DyvzrxYZjk8fOidPslc4lLbFb8BYO');
+(3, 't', 't', 't@gmail.com', '$2y$10$va2hfXrOUOvFtrhUvHsB/u/bWtE0U6bBloSewo1Ql4blHKi4iu2dm');
 
 -- --------------------------------------------------------
 
@@ -58,8 +58,9 @@ CREATE TABLE IF NOT EXISTS `inventaireslogistock` (
   `stock` int NOT NULL,
   `prix` decimal(10,0) NOT NULL,
   `idGerant` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  KEY `fk_idGerant` (`idGerant`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `inventaireslogistock`
@@ -67,8 +68,19 @@ CREATE TABLE IF NOT EXISTS `inventaireslogistock` (
 
 INSERT INTO `inventaireslogistock` (`id`, `nomArticles`, `stock`, `prix`, `idGerant`) VALUES
 (1, 'marteau', 4, 54, 1),
-(2, 'pioche', 6, 20, 2),
-(3, 'lunettes', 10, 500, 0);
+(7, 'sg', 1, 1, 1),
+(8, 'to', 1, 1, 1),
+(11, 'r', 7, 7, 3);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `inventaireslogistock`
+--
+ALTER TABLE `inventaireslogistock`
+  ADD CONSTRAINT `fk_idGerant` FOREIGN KEY (`idGerant`) REFERENCES `gerants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
