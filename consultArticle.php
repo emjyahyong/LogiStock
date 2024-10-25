@@ -9,7 +9,7 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Accueil</title>
+        <title>Modification article</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
