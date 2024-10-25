@@ -38,11 +38,11 @@ $idGerant = $_SESSION['id']; // Récupérer l'ID depuis la session
                     <h2 class="text-center">Modification caractéristiques article</h2>
                     <?php
                         require_once "./connexionBDD.php";
-                        $sql = "SELECT * FROM inventaireslogistock WHERE idGerant = $idGerant;";
+                        $idArticle = $_GET['id'];
+                        $sql = "SELECT * FROM inventaireslogistock WHERE idGerant = $idGerant AND id = $idArticle;";
                         $resultat = $cnx->query($sql);
                         $ligne = $resultat->fetch();
 
-                        $idArticle = $ligne["id"];
                         $nomArticle = $ligne["nomArticles"];
                         $stock = $ligne["stock"];
                         $prix = $ligne["prix"];
